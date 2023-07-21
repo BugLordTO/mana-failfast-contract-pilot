@@ -1,0 +1,1 @@
+# mana-failfast-contract-pilot
