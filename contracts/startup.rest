@@ -1,0 +1,217 @@
+# @host = https://prove-prod.azurewebsites.net
+@host = https://localhost:7057
+@subscriptionId = test-startup
+
+############ verify-otp ############
+get {{host}}/api/subscriptions/{{subscriptionId}}/visit/default/verify-otp
+subscriptionId: {{subscriptionId}}
+flow: request-otp
+
+###
+get {{host}}/api/subscriptions/{{subscriptionId}}/contracts/default/verify-otp
+subscriptionId: {{subscriptionId}}
+flow: verify-otp
+
+###
+post {{host}}/api/subscriptions/{{subscriptionId}}/contracts/default/verify-otp
+Content-Type: application/json
+subscriptionId: {{subscriptionId}}
+flow: verify-otp
+
+{
+    "stringField":"test string",
+    "intField": 36,
+    "floatField": 15.5,
+    "dateTimeField": "2023-06-22T00:00:09.000Z",
+    "nestedObjectField": {
+        "nestedStringField":"test string",
+        "nestedIntField": 0,
+        "nestedFloatField": 0.5,
+        "nestedDateTimeField": "2023-06-22T00:00:00.000Z"
+    },
+    "stringArrayField":[
+        "item 1",
+        "item 2",
+        "item 3"
+    ],
+    "intArrayField":[
+        1,
+        2,
+        3
+    ],
+    "objectArrayField":[
+        {
+            "nestedStringField":"object item 1",
+            "nestedIntField": 1,
+            "nestedFloatField": 1.5,
+            "nestedDateTimeField": "2023-06-22T00:00:01.001Z"
+        },
+        {
+            "nestedStringField":"object item 2",
+            "nestedIntField": 2,
+            "nestedFloatField": 2.5,
+            "nestedDateTimeField": "2023-06-22T00:00:02.002Z"
+        },
+        {
+            "nestedStringField":"object item 3",
+            "nestedIntField": 3,
+            "nestedFloatField": 3.5,
+            "nestedDateTimeField": "2023-06-22T00:00:03.003Z"
+        },
+        {
+            "nestedStringField":"object item 4",
+            "nestedIntField": 4,
+            "nestedFloatField": 4.5,
+            "nestedDateTimeField": "2023-06-22T00:00:04.004Z"
+        }
+    ]
+}
+
+############ account-display ############
+get {{host}}/api/subscriptions/{{subscriptionId}}/visit/default/account-display
+subscriptionId: {{subscriptionId}}
+flow: home
+
+###
+get {{host}}/api/subscriptions/{{subscriptionId}}/contracts/default/account-display
+subscriptionId: {{subscriptionId}}
+flow: home
+
+###
+post {{host}}/api/subscriptions/{{subscriptionId}}/contracts/default/account-display
+Content-Type: application/json
+subscriptionId: {{subscriptionId}}
+flow: home
+
+{
+    "Test":"asdasd"
+}
+
+############ pin ############
+get {{host}}/api/subscriptions/{{subscriptionId}}/visit/default/pin
+subscriptionId: {{subscriptionId}}
+flow: home
+
+###
+get {{host}}/api/subscriptions/{{subscriptionId}}/contracts/default/pin
+subscriptionId: {{subscriptionId}}
+flow: home
+
+###
+post {{host}}/api/subscriptions/{{subscriptionId}}/contracts/default/pin
+Content-Type: application/json
+subscriptionId: {{subscriptionId}}
+flow: home
+
+{
+    "Test":"asdasd"
+}
+###
+# POST https://prove-prod.azurewebsites.net/api/subscriptions/sub-startup/contracts/default/verify-otp
+POST https://localhost:7057/api/subscriptions/sub-startup/contracts/default/pin
+Content-Type: application/json
+flow: pin
+endpointId: null
+subscriptionId: sub-startup
+fromClient: manahash
+
+
+{"refId":"abcd","verificationCode":"112233"}
+
+###
+# post https://prove-prod.azurewebsites.net/api/subscriptions/sub-startup/contracts/default/post-create-bankaccount
+# POST https://localhost:7057/api/subscriptions/sub-startup/contracts/default/post-create-bankaccount
+post https://localhost:7057/api/subscriptions/topup/contracts/default/post-topup
+Content-Type: application/json
+flow: post-topup
+endpointId: post-topup
+subscriptionId: topup
+fromClient: manahash
+
+{
+    "countryCode": "+66",
+    "phoneNumber": "0944455547"
+}
+
+###
+
+get https://localhost:7057/api/subscriptions/sub-financial/visit/default/financial?endpointId=~newid
+subscriptionId: sub-startup
+
+###
+
+###
+POST https://localhost:7057/api/subscriptions/bank-account/contracts/default/post-create-bank-account
+Content-Type: application/json
+flow:account-ppay-create
+# endpointId: null
+subscriptionId: bank-account
+fromClient: manahash
+
+{"accountName":"xx","accountType":"ppay","ppayType":"phone","accountNo":"888"}
+
+###
+get https://localhost:7057/api/subscriptions/bank-account/visit/default/account-ppay-create
+subscriptionId: bank-account
+# { flow = "account-main", endpointId = null, subscriptionId = "bank-account", fromClient = "manahash" }
+
+
+###
+POST https://prove-prod.azurewebsites.net/api/subscriptions/withdraw/contracts/default/post-withdraw?endpointId=638319254795847956
+# POST https://localhost:7057/api/subscriptions/withdraw/contracts/default/post-withdraw?endpointId=638319254795847956
+Content-Type: application/json
+flow: withdraw-create
+endpointId:638319254795847956
+subscriptionId:withdraw
+fromClient:manahash
+
+{
+    "amount":"5"
+}
+###
+POST https://prove-prod.azurewebsites.net/api/subscriptions/withdraw/contracts/default/withdraw-confirm-dlg?endpointId=638319254795847956
+# POST https://localhost:7057/api/subscriptions/withdraw/contracts/default/post-withdraw?endpointId=638319254795847956
+Content-Type: application/json
+flow: withdraw-confirm-dlg
+endpointId:638319254795847956
+subscriptionId:withdraw
+fromClient:manahash
+
+{
+    "amount":"5"
+}
+###
+POST https://prove-prod.azurewebsites.net/api/subscriptions/withdraw/contracts/default/post-withdraw-dialog?endpointId=638319254795847956
+# POST https://localhost:7057/api/subscriptions/withdraw/contracts/default/post-withdraw-dialog?endpointId=638319254795847956
+Content-Type: application/json
+flow: withdraw-confirm
+endpointId:638319254795847956
+subscriptionId:withdraw
+fromClient:manahash
+
+{
+    "amount":"5"
+}
+
+###
+GET https://prove-prod.azurewebsites.net/api/subscriptions/bank-account/visit/default/bank-select?endpointId=638319254795847956
+subscriptionId:bank-account
+flow: bank-select
+endpointId:638319254795847956
+
+###
+GET https://localhost:7057/api/subscriptions/withdraw/contracts/default/get-withdraw-confirm?endpointId=638319254795847956
+subscriptionId:withdraw
+flow: withdraw-confirm
+endpointId:638319254795847956
+
+###
+# POST https://prove-prod.azurewebsites.net/api/subscriptions/withdraw/contracts/default?EndpointId=638321647950055175
+POST https://localhost:7057/api/subscriptions/bank-account/contracts/default/post-create-bank-account?EndpointId=638321647950055175
+flow: account-bank-confirm
+endpointId: 638321647950055175
+subscriptionId: bank-account
+fromClient: manahash
+Content-Type: application/json
+
+{"none":""}

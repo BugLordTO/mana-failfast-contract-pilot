@@ -1,0 +1,62 @@
+{
+    "_id" : "manee",
+    "McontentUrl" : "https://failfast.blob.core.windows.net/easy/manee/manee.zip",
+    "SubscriptionId" : "sub-startup",
+    "BaId" : "001",
+    "SmartContracts" : [ 
+        {
+            "Path" : "get-login-data",
+            "Url" : "https://failfast.blob.core.windows.net/easy/manee/login-data.json",
+            "EndpointType" : "proxy",
+            "CallType" : "get-data"
+        }, 
+        {
+            "Path" : "post-create-bankaccount",
+            "Url" : "https://failfast.blob.core.windows.net/easy/manee/startup.py",
+            "EndpointType" : "smart-contract",
+            "CallType" : "submit-data"
+        }, 
+        {
+            "Path" : "verify-otp",
+            "Url" : "https://failfast.blob.core.windows.net/easy/mana/n2p.py",
+            "EndpointType" : "smart-contract",
+            "CallType" : "visit"
+        }, 
+        {
+            "Path" : "verify-otp",
+            "Url" : "https://failfast.blob.core.windows.net/easy/manee/startup.py",
+            "EndpointType" : "smart-contract",
+            "CallType" : "submit-data"
+        }, 
+        {
+            "Path" : "account-display",
+            "Url" : "https://failfast.blob.core.windows.net/easy/mana/n2p.py",
+            "EndpointType" : "smart-contract",
+            "CallType" : "visit"
+        }, 
+        {
+            "Path" : "account-display",
+            "Url" : "https://failfast.blob.core.windows.net/easy/manee/startup.py",
+            "EndpointType" : "smart-contract",
+            "CallType" : "submit-data"
+        }, 
+        {
+            "Path" : "pin",
+            "Url" : "https://failfast.blob.core.windows.net/easy/mana/n2p.py",
+            "EndpointType" : "smart-contract",
+            "CallType" : "visit"
+        }, 
+        {
+            "Path" : "pin",
+            "Url" : "https://failfast.blob.core.windows.net/easy/manee/startup.py",
+            "EndpointType" : "smart-contract",
+            "CallType" : "submit-data"
+        }, 
+        {
+            "Path" : "switch-root",
+            "Url" : "https://failfast.blob.core.windows.net/easy/mana/switch-root.py",
+            "EndpointType" : "smart-contract",
+            "CallType" : "visit"
+        }
+    ]
+}

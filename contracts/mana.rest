@@ -1,0 +1,18 @@
+# @host = https://prove-prod.azurewebsites.net
+@host = https://localhost:7057
+@stickyId = 638278847520000000
+
+### 1st open
+get {{host}}/mana/start/20230817001
+### 2nd open with sticky
+get {{host}}/mana/start/20230817001?sticky={{stickyId}}
+### 2nd open with sticky but  sticky not exist
+get {{host}}/mana/start/20230817001
+### 2nd open no sticky
+get {{host}}/mana/start/20230817001?sticky={{stickyId}}
+
+
+
+
+### invalid build no
+get {{host}}/mana/start/20201231999

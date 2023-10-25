@@ -1,0 +1,22 @@
+{
+    "Shortcuts": [
+        {
+            "Title": "Promome"
+        },
+        {
+            "Title": "Solar Delivery"
+        }
+    ],
+    "Feeds": [
+        {
+            "Title": "Mana",
+            "Description": "Kyc status",
+            "Status": "pending"
+        },
+        {
+            "Title": "Mana",
+            "Description": "Topup success",
+            "Status": "Completed"
+        }
+    ]
+}
