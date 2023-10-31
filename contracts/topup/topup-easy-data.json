@@ -1,0 +1,105 @@
+{
+    "_id" : "topup",
+    "SubscriptionId" : "topup",
+    "McontentUrl" : "https://failfast.blob.core.windows.net/easy/topup/topup_202310101515.zip",
+    "BaId" : "001",
+    "McId" : "topup_202310101515",
+    "SmartContracts" : [ 
+        {
+            "Path" : "get-topupList-data",
+            "Url" : "https://failfast.blob.core.windows.net/easy/topup/topup-data.json",
+            "EndpointType" : "proxy",
+            "CallType" : "get-data"
+        }, 
+        {
+            "Path" : "topuplist",
+            "Url" : "https://failfast.blob.core.windows.net/easy/mana/n2m.py",
+            "EndpointType" : "proxy",
+            "CallType" : "visit"
+        }, 
+        {
+            "Path" : "topup-create",
+            "Url" : "https://failfast.blob.core.windows.net/easy/mana/n2m.py",
+            "EndpointType" : "proxy",
+            "CallType" : "visit"
+        }, 
+        {
+            "Path" : "topupppay-create",
+            "Url" : "https://failfast.blob.core.windows.net/easy/mana/n2m.py",
+            "EndpointType" : "proxy",
+            "CallType" : "visit"
+        }, 
+        {
+            "Path" : "topupqr-create",
+            "Url" : "https://failfast.blob.core.windows.net/easy/mana/n2m.py",
+            "EndpointType" : "proxy",
+            "CallType" : "visit"
+        }, 
+        {
+            "Path" : "post-topup",
+            "Url" : "https://failfast.blob.core.windows.net/easy/topup/startup.py",
+            "EndpointType" : "smart-contract",
+            "CallType" : "submit-data"
+        }, 
+        {
+            "Path" : "topupqr-confirm",
+            "Url" : "https://failfast.blob.core.windows.net/easy/mana/n2m.py",
+            "EndpointType" : "proxy",
+            "CallType" : "visit"
+        }, 
+        {
+            "Path" : "topupppay-confirm",
+            "Url" : "https://failfast.blob.core.windows.net/easy/mana/n2m.py",
+            "EndpointType" : "proxy",
+            "CallType" : "visit"
+        }, 
+        {
+            "Path" : "topup-confirm",
+            "Url" : "https://failfast.blob.core.windows.net/easy/mana/n2m.py",
+            "EndpointType" : "proxy",
+            "CallType" : "visit"
+        }, 
+        {
+            "Path" : "topup-detail-response",
+            "Url" : "https://failfast.blob.core.windows.net/easy/mana/non.py",
+            "EndpointType" : "proxy",
+            "CallType" : "visit"
+        }, 
+        {
+            "Path" : "topup-detail",
+            "Url" : "https://failfast.blob.core.windows.net/easy/mana/n2m.py",
+            "EndpointType" : "proxy",
+            "CallType" : "visit"
+        }, 
+        {
+            "Path" : "post-topup-qr",
+            "Url" : "https://failfast.blob.core.windows.net/easy/topup/startup.py",
+            "EndpointType" : "smart-contract",
+            "CallType" : "submit-data"
+        }, 
+        {
+            "Path" : "post-topup-qr-complete",
+            "Url" : "https://failfast.blob.core.windows.net/easy/mana/complete-wf.py",
+            "EndpointType" : "smart-contract",
+            "CallType" : "visit"
+        }, 
+        {
+            "Path" : "topup-bank-select",
+            "Url" : "https://failfast.blob.core.windows.net/easy/mana/n2m.py",
+            "EndpointType" : "proxy",
+            "CallType" : "visit"
+        }, 
+        {
+            "Path" : "get-bankList-data",
+            "Url" : "https://failfast.blob.core.windows.net/easy/topup/topup-data.json",
+            "EndpointType" : "proxy",
+            "CallType" : "get-data"
+        }, 
+        {
+            "Path" : "display-result-dlg-topup",
+            "Url" : "https://failfast.blob.core.windows.net/easy/mana/complete-dlg-msg.py",
+            "EndpointType" : "smart-contract",
+            "CallType" : "visit"
+        }
+    ]
+}

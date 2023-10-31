@@ -2,7 +2,7 @@ print("Hello, from the [switch-root] script!")
 
 def ExecuteEndpoint():
     if SmCtx.CrResultDicts["LoginResult"] == "success":
-        if SmCtx.Connect():
+        if SmCtx.Connect().Result is True:
             # print("call GetProfile")
             # SmCtx.GetProfile()
 
