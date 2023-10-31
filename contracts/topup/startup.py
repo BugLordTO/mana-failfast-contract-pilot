@@ -38,6 +38,15 @@ def ExecuteEndpoint():
     elif SmCtx.SrcFlow and SmCtx.SrcFlow.lower() == "topupppay-confirm":
         SmCtx.SetResult({
             "Command":"Visit",
+            "EndpointUrl":"/api/subscriptions/topup/visit/default/topupppay-detail-response?EndpointId=" + SmCtx.SrcEndpointId,
+            "SendOsNoti":"/api/subscriptions/topup/visit/default/display-result-dlg-topupppay?EndpointId=" + SmCtx.SrcEndpointId,
+            "OsNotiTitle":"กำลังส่งคำขอเติมเงินไปยัง",
+            "OsNotiMessage":"พร้อมเพย์ 12345678 กรุณายืนยันที่ mobile banking ของคุณ",
+            "SendInAppNoti":"/api/subscriptions/topup/visit/default/display-result-dlg-topupppay?EndpointId=" + SmCtx.SrcEndpointId,
+        })
+    elif SmCtx.SrcFlow and SmCtx.SrcFlow.lower() == "display-result-dlg-topupppay":
+        SmCtx.SetResult({
+            "Command":"Visit",
             "EndpointUrl":"/api/subscriptions/topup/visit/default/display-result-dlg-topup?EndpointId=" + SmCtx.SrcEndpointId,
             "Message":"พร้อมเพย์ 12345678 กรุณายืนยันที่ mobile banking ของคุณ",
             "Title":"กำลังส่งคำขอเติมเงินไปยัง",
@@ -46,10 +55,6 @@ def ExecuteEndpoint():
             "Button1Text":"ปิด",
             "Size":"m",
             "NextEndpointUrl":"/api/subscriptions/topup/visit/default/topup-bank-select?EndpointId=~newid",
-            "SendOsNoti":"/api/subscriptions/topup/visit/default/display-result-dlg-topup?EndpointId=" + SmCtx.SrcEndpointId,
-            "OsNotiTitle":"กำลังส่งคำขอเติมเงินไปยัง",
-            "OsNotiMessage":"พร้อมเพย์ 12345678 กรุณายืนยันที่ mobile banking ของคุณ",
-            "SendInAppNoti":"/api/subscriptions/topup/visit/default/display-result-dlg-topup?EndpointId=" + SmCtx.SrcEndpointId,
         })
     elif SmCtx.SrcFlow and SmCtx.SrcFlow.lower() == "topup-detail":
         SmCtx.SetResult({
