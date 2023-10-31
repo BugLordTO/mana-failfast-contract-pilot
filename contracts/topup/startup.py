@@ -1,6 +1,10 @@
 print("Hello, from the [startup] script!")
 def ExecuteEndpoint():
-    print(SmCtx.SrcFlow.lower())
+    # if SmCtx.SrcFlow:
+    #     print("SrcFlow: {SrcFlow}".format("SrcFlow", SmCtx.SrcFlow.lower()))
+    # if SmCtx.Flow:
+    #     print("Flow: {Flow}".format("Flow", SmCtx.Flow.lower()))
+
     if SmCtx.SrcFlow and SmCtx.SrcFlow.lower() == "topuplist":
         SmCtx.SetResult({
             "Command":"Visit",
@@ -44,10 +48,10 @@ def ExecuteEndpoint():
             "OsNotiMessage":"พร้อมเพย์ 12345678 กรุณายืนยันที่ mobile banking ของคุณ",
             "SendInAppNoti":"/api/subscriptions/topup/visit/default/display-result-dlg-topupppay?EndpointId=" + SmCtx.SrcEndpointId,
         })
-    elif SmCtx.SrcFlow and SmCtx.SrcFlow.lower() == "display-result-dlg-topupppay":
+    elif SmCtx.Flow and SmCtx.Flow.lower() == "display-result-dlg-topupppay":
         SmCtx.SetResult({
             "Command":"Visit",
-            "EndpointUrl":"/api/subscriptions/topup/visit/default/display-result-dlg-topup?EndpointId=" + SmCtx.SrcEndpointId,
+            "EndpointUrl":"/api/subscriptions/topup/visit/default/display-result-dlg-topup?EndpointId=" + SmCtx.EndpointId,
             "Message":"พร้อมเพย์ 12345678 กรุณายืนยันที่ mobile banking ของคุณ",
             "Title":"กำลังส่งคำขอเติมเงินไปยัง",
             "Logo":"https://failfast.blob.core.windows.net/easy/bank-account/assets/topup.svg",
