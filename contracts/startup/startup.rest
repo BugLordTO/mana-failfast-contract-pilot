@@ -215,3 +215,18 @@ fromClient: manahash
 Content-Type: application/json
 
 {"none":""}
+
+###
+POST https://localhost:7057/api/device/connect
+Content-Type: application/json
+userId: manadev
+
+{
+    "SubscriptionId":"4a973f64-a9c7-4fd4-9089-2c0f6738f13d"
+}
+
+###
+GET https://prove-prod.azurewebsites.net/api/subscriptions/topup/visit/default/display-result-dlg-topupppay?EndpointId=asd
+# GET https://localhost:7057/api/subscriptions/topup/visit/default/display-result-dlg-topupppay?EndpointId=asd
+subscriptionId: startup
+fromClient: manahash

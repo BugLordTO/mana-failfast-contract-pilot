@@ -1,0 +1,123 @@
+{
+    "_id" : "bank-account",
+    "McontentUrl" : "https://failfast.blob.core.windows.net/easy/bank-account/bankaccount-202311081751.zip",
+    "SubscriptionId" : "bank-account",
+    "BaId" : "001",
+    "McId" : "bankaccount-202311081751",
+    "SmartContracts" : [ 
+        {
+            "Path" : "account-main",
+            "Url" : "https://failfast.blob.core.windows.net/easy/mana/n2m.py",
+            "EndpointType" : "proxy",
+            "CallType" : "visit"
+        }, 
+        {
+            "Path" : "account-ppay-create",
+            "Url" : "https://failfast.blob.core.windows.net/easy/mana/n2m.py",
+            "EndpointType" : "proxy",
+            "CallType" : "visit"
+        }, 
+        {
+            "Path" : "account-ppay-confirm",
+            "Url" : "https://failfast.blob.core.windows.net/easy/mana/n2m.py",
+            "EndpointType" : "proxy",
+            "CallType" : "visit"
+        }, 
+        {
+            "Path" : "account-bank-create",
+            "Url" : "https://failfast.blob.core.windows.net/easy/mana/n2m.py",
+            "EndpointType" : "proxy",
+            "CallType" : "visit"
+        }, 
+        {
+            "Path" : "bank-select",
+            "Url" : "https://failfast.blob.core.windows.net/easy/mana/dlg-option.py",
+            "EndpointType" : "proxy",
+            "CallType" : "visit"
+        }, 
+        {
+            "Path" : "account-bank-confirm",
+            "Url" : "https://failfast.blob.core.windows.net/easy/mana/n2m.py",
+            "EndpointType" : "proxy",
+            "CallType" : "visit"
+        }, 
+        {
+            "Path" : "account-bank-info",
+            "Url" : "https://failfast.blob.core.windows.net/easy/mana/n2m.py",
+            "EndpointType" : "proxy",
+            "CallType" : "visit"
+        }, 
+        {
+            "Path" : "account-ppay-info",
+            "Url" : "https://failfast.blob.core.windows.net/easy/mana/n2m.py",
+            "EndpointType" : "proxy",
+            "CallType" : "visit"
+        }, 
+        {
+            "Path" : "account-editname",
+            "Url" : "https://failfast.blob.core.windows.net/easy/mana/n2m.py",
+            "EndpointType" : "proxy",
+            "CallType" : "visit"
+        }, 
+        {
+            "Path" : "account-editname-complete",
+            "Url" : "https://failfast.blob.core.windows.net/easy/mana/complete-wf.py",
+            "EndpointType" : "proxy",
+            "CallType" : "visit"
+        }, 
+        {
+            "Path" : "get-bank-account-list",
+            "Url" : "https://failfast.blob.core.windows.net/easy/bank-account/bank-account-list.json",
+            "EndpointType" : "proxy",
+            "CallType" : "get-data"
+        }, 
+        {
+            "Path" : "get-bank-account-info",
+            "Url" : "https://failfast.blob.core.windows.net/easy/bank-account/account-bank-info.json",
+            "EndpointType" : "proxy",
+            "CallType" : "get-data"
+        }, 
+        {
+            "Path" : "get-ppay-account-info",
+            "Url" : "https://failfast.blob.core.windows.net/easy/bank-account/account-ppay-info.json",
+            "EndpointType" : "proxy",
+            "CallType" : "get-data"
+        }, 
+        {
+            "Path" : "get-bank-list",
+            "Url" : "https://failfast.blob.core.windows.net/easy/bank-account/bank-list.json",
+            "EndpointType" : "proxy",
+            "CallType" : "get-data"
+        }, 
+        {
+            "Path" : "post-create-bank-account",
+            "Url" : "https://failfast.blob.core.windows.net/easy/bank-account/post.py",
+            "EndpointType" : "smart-contract",
+            "CallType" : "submit-data"
+        }, 
+        {
+            "Path" : "post-edit-account-name",
+            "Url" : "https://failfast.blob.core.windows.net/easy/bank-account/post.py",
+            "EndpointType" : "smart-contract",
+            "CallType" : "submit-data"
+        }, 
+        {
+            "Path" : "display-result-dlg",
+            "Url" : "https://failfast.blob.core.windows.net/easy/mana/complete-dlg-msg-next.py",
+            "EndpointType" : "smart-contract",
+            "CallType" : "visit"
+        }, 
+        {
+            "Path" : "display-confirm-dlg",
+            "Url" : "https://failfast.blob.core.windows.net/easy/mana/dlg-content-confirm.py",
+            "EndpointType" : "smart-contract",
+            "CallType" : "visit"
+        }, 
+        {
+            "Path" : null,
+            "Url" : "https://failfast.blob.core.windows.net/easy/bank-account/delete-acc-confirm.json",
+            "EndpointType" : "proxy",
+            "CallType" : "get-data"
+        }
+    ]
+}

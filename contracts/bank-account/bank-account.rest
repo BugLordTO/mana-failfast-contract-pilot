@@ -1,0 +1,26 @@
+# @host = https://prove-prod.azurewebsites.net
+@host = https://localhost:7057
+@subscriptionId = bank-account
+
+############ account-main ############
+get {{host}}/api/subscriptions/{{subscriptionId}}/visit/default/account-main
+subscriptionId: {{subscriptionId}}
+flow: account-main
+
+###
+post {{host}}/api/subscriptions/{{subscriptionId}}/contracts/default/post-create-bank-account?endpointId=123
+Content-Type: application/json
+subscriptionId: {{subscriptionId}}
+flow: account-bank-create
+endpointId: 123
+
+{}
+
+###
+post {{host}}/api/subscriptions/{{subscriptionId}}/contracts/default/post-create-bank-account?endpointId=123
+Content-Type: application/json
+subscriptionId: {{subscriptionId}}
+flow: account-bank-confirm
+endpointId: 123
+
+{}
