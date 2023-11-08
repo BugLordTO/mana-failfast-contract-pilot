@@ -104,13 +104,13 @@
         {
             "Path" : "display-result-dlg",
             "Url" : "https://failfast.blob.core.windows.net/easy/mana/complete-dlg-msg-next.py",
-            "EndpointType" : "smart-contract",
+            "EndpointType" : "proxy",
             "CallType" : "visit"
         }, 
         {
             "Path" : "display-confirm-dlg",
             "Url" : "https://failfast.blob.core.windows.net/easy/mana/dlg-content-confirm.py",
-            "EndpointType" : "smart-contract",
+            "EndpointType" : "proxy",
             "CallType" : "visit"
         }, 
         {
