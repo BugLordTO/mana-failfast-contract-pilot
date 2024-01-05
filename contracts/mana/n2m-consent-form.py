@@ -26,8 +26,23 @@ def ExecuteEndpoint():
         SmCtx.CrResultDicts["SrcSubscriptionId"])
 
 def ActionButton_Clicked():
-    if SmCtx.AcceptChecked:
-        SmCtx.OnSubmit()
+    SmCtx.OnSubmit()
+
+# def RejectButton_Clicked():
+def CancelButton_Clicked():
+    SmCtx.OnSubmit()
+
+def ExecuteConsent():
+    if SmCtx.CrResultDicts["Acceptance"] == "accept":
+        SmCtx.SubmitToServer(SmCtx.CrResultDicts["HostBaseUrl"] + 
+            "/api/subscriptions/" + SmCtx.CrResultDicts["DestSubscriptionId"] + 
+            "/form-consent-accept/" + SmCtx.CrResultDicts["DestApiId"] + 
+            "/" + SmCtx.CrResultDicts["DestPath"])
+    elif SmCtx.CrResultDicts["Acceptance"] == "reject":
+        SmCtx.SubmitToServer(SmCtx.CrResultDicts["HostBaseUrl"] + 
+            "/api/subscriptions/" + SmCtx.CrResultDicts["DestSubscriptionId"] + 
+            "/form-consent-reject/" + SmCtx.CrResultDicts["DestApiId"] + 
+            "/" + SmCtx.CrResultDicts["DestPath"])
     else:
         print("call SetContentLocation for Dialog")
         SmCtx.SetContentLocation(
@@ -64,6 +79,3 @@ def ActionButton_Clicked():
             SmCtx.CrResultDicts["Button1Text"] if SmCtx.CrResultDicts.ContainsKey("Button1Text") is True else "Close",
             SmCtx.CrResultDicts["Button2Text"] if SmCtx.CrResultDicts.ContainsKey("Button2Text") is True else "",
             SmCtx.CrResultDicts["Size"] if SmCtx.CrResultDicts.ContainsKey("Size") is True else "")
-
-def RejectButton_Clicked():
-    SmCtx.OnSubmit()
