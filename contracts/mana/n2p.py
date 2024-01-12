@@ -21,7 +21,7 @@ def ExecuteEndpoint():
         SmCtx.CrResultDicts["SrcSubscriptionId"],
 
         SmCtx.CrResultDicts["Button1Text"] if SmCtx.CrResultDicts.ContainsKey("Button1Text") is True else "Ok",
-        SmCtx.CrResultDicts["Button2Text"] if SmCtx.CrResultDicts.ContainsKey("Button2Text") is True else "")
+        "")
 
 def ActionButton_Clicked():
     SmCtx.SubmitToServer(SmCtx.CrResultDicts["HostBaseUrl"] + SmCtx.CrResultDicts["SubmitUrl"])

@@ -26,7 +26,7 @@ def ExecuteEndpoint():
         SmCtx.CrResultDicts["SrcSubscriptionId"],
 
         SmCtx.CrResultDicts["Button1Text"] if SmCtx.CrResultDicts.ContainsKey("Button1Text") is True else "Close",
-        SmCtx.CrResultDicts["Button2Text"] if SmCtx.CrResultDicts.ContainsKey("Button2Text") is True else "",
+        "",
         SmCtx.CrResultDicts["Size"] if SmCtx.CrResultDicts.ContainsKey("Size") is True else "")
 
 def ActionButton_Clicked():
