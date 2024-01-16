@@ -1,4 +1,10 @@
-print("Hello, from the [dlg-confirm.py] script!")
+print("Hello, from the [dlg-msg-confirm.py] script!")
+
+# - open confirm dialog
+# - msg mcontent
+# - 2 button 
+#   1 submit to server
+#   2 close dialog
 
 def ExecuteEndpoint():
     print("call SetContentLocation for Dialog")

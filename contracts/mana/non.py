@@ -1,4 +1,4 @@
-print("Hello, from the [navigate-to-3rd-page] script!")
+print("Hello, from the [non.py] script!")
 
 def ExecuteEndpoint():
     print("NO OPERRATION !")

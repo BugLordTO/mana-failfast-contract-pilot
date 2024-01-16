@@ -1,4 +1,7 @@
-print("Hello, from the [complete-wf.py] script!")
+print("Hello, from the [complete-wf-next.py] script!")
+
+# - complete worlflow
+# - visit next url
 
 def ExecuteEndpoint():
     print("call CompleteWorkflow")

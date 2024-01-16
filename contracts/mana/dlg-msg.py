@@ -1,4 +1,9 @@
-print("Hello, from the [n2m-dlg.py] script!")
+print("Hello, from the [dlg-msg.py] script!")
+
+# - open confirm dialog
+# - msg mcontent
+# - 2 button 
+#   1 close dialog
 
 def ExecuteEndpoint():
     print("call SetContentLocation for Dialog")

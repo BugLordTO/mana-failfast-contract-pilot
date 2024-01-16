@@ -1,4 +1,9 @@
-print("Hello, from the [complete-dlg.py] script!")
+print("Hello, from the [complete-dlg-content.py] script!")
+
+# - open complete dialog
+# - mcontent
+# - 1 button 
+#   1 complete workflow
 
 def ExecuteEndpoint():
     print("call SetContentLocation for Dialog")

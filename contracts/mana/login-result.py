@@ -1,4 +1,4 @@
-print("Hello, from the [switch-root] script!")
+print("Hello, from the [login-result.py] script!")
 
 def ExecuteEndpoint():
     if SmCtx.CrResultDicts["LoginResult"] == "success":

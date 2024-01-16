@@ -1,5 +1,7 @@
-print("Hello, from the [navigate-to-3rd-page] script!")
+print("Hello, from the [go-home.py] script!")
+
+# - go home
 
 def ExecuteEndpoint():
-    MobileCtx.GoHome()
+    SmCtx.GoHome()
     

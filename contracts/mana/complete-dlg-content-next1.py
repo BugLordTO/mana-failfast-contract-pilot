@@ -1,4 +1,10 @@
-print("Hello, from the [complete-dlg.py] script!")
+print("Hello, from the [complete-dlg-content-next1.py] script!")
+
+# - open complete dialog
+# - mcontent
+# - 2 button 
+#   1 visit next url
+#   2 complete workflow
 
 def ExecuteEndpoint():
     print("call SetContentLocation for Dialog")
@@ -30,12 +36,12 @@ def ExecuteEndpoint():
         SmCtx.CrResultDicts["Size"] if SmCtx.CrResultDicts.ContainsKey("Size") is True else "")
 
 def ActionButton_Clicked():
+    print("call Visit")
+    SmCtx.Visit(SmCtx.CrResultDicts["HostBaseUrl"] + SmCtx.CrResultDicts["NextEndpointUrl"])
+
     print("call CompleteWorkflow")
     SmCtx.CompleteWorkflow(SmCtx.CrResultDicts["EndpointId"])
 
 def CancelButton_Clicked():
-    print("call Visit")
-    SmCtx.Visit(SmCtx.CrResultDicts["HeaderBaseUrl"] + SmCtx.CrResultDicts["NextEndpointUrl"])
-
     print("call CompleteWorkflow")
     SmCtx.CompleteWorkflow(SmCtx.CrResultDicts["EndpointId"])
